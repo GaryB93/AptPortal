@@ -5,12 +5,13 @@
     "allowUnreachableCode": false,
     "noFallthroughCasesInSwitch": true,
     "noImplicitReturns": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
     "moduleResolution": "Node",
     "jsx": "react",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
+    "lib": [
+      "dom", "es2015"
+    ],
   },
-  "include": ["src/**/*"]
+  "include": ["src"]
 }

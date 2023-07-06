@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "description": "This application is a web based portal for individual apartment communities",
-  "main": "index.js",
+  "main": "index.tsx",
   "scripts": {
     "server": "nodemon src/server/server.js",
     "build": "NODE_ENV=production webpack",
