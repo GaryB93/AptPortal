@@ -1,32 +1,22 @@
 import React from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Login from './pages/Login/Login';
+import Signup from './pages/Signup/Signup';
+import Home from './pages/Home/Home';
 
+// Router for client side rendering of separate pages
 const router = createBrowserRouter([
-  {
+  { // login page
     path: '/',
-    element: ,
+    element: <Login />,
   },
-  {
+  { // signup page
     path: 'signup',
-    element: ,
+    element: <Signup />,
   },
-  {
+  { // home page
     path: 'home',
-    element: ,
-    children: [
-      {
-        path: 'news',
-        element: ,
-      },
-      {
-        path: 'activity',
-        element: ,
-      },
-      {
-        path: 'profile',
-        element: ,
-      },
-    ]
+    element: <Home />,
   },
 ]);
 
