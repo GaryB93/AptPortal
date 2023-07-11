@@ -2,7 +2,7 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import App from './App';
 // import reset styles
-import './index.scss';
+import './assets/styles/Root.module.scss';
 
 // Render App component
 // potential for DOM node not returned, cast as HTMLElement

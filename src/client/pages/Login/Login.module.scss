@@ -1,3 +1,40 @@
+@import '../../assets/styles/Colors.module.scss';
+
 .loginForm {
-  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+
+  h1 {
+    text-align: center;
+  }
+
+  label {
+    margin: 1em 1em 0 1em;
+  }
+
+  input {
+    height: 1.5em;
+    padding: 1em;
+    margin: 0 1em;
+    text-align: center;
+  }
+
+  p:nth-of-type(1) {
+    color: red;
+  }
+
+  p {
+    margin: 1em;
+    text-align: center;
+  }
+
+  button {
+    margin: 0 1em;
+  }
+
+  a {
+    text-align: center;
+    text-decoration: none;
+    margin: 0 1em 1em 1em;
+  }
 }
