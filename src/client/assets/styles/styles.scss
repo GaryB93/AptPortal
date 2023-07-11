@@ -1,3 +1,5 @@
+@import './Colors.module.scss';
+
 // STYLE RESET
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -14,7 +16,7 @@ dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+figure, figcaption, footer, hgroup, 
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -26,11 +28,11 @@ time, mark, audio, video {
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
+footer, hgroup, menu, nav, section {
 	display: block;
 }
 body {
-	line-height: 1;
+	line-height: 1.5;
 }
 ol, ul {
 	list-style: none;
@@ -46,4 +48,59 @@ q:before, q:after {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
+}
+
+// General styles
+* {
+	box-sizing: border-box;
+}
+body{
+	font-family:Verdana, Geneva, Tahoma, sans-serif;
+	color: $not-quite-black;
+}
+#root {
+	height: 100vh;
+	background-color: $background-color;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-weight: bold;
+}
+h1 {
+	font-size: 2em;
+}
+h2 {
+	font-size: 1.6em;
+}
+h3 {
+	font-size: 1.2em;
+}
+.primary-btn {
+	background-color: $primary-color;
+	font-size: 1em;
+	padding: 0.3em;
+	color: white;
+	border: 2px solid $primary-color;
+	border-radius: 0.4em;
+	cursor: pointer;
+}
+.primary-btn:hover {
+	opacity: 0.6;
+}
+.secondary-btn {
+	background-color: white;
+	font-size: 1em;
+	padding: 0.3em;
+	color: $not-quite-black;
+	border: 1px solid $light-gray;
+	border-radius: 0.4em;
+	cursor: pointer;
+}
+.secondary-btn:hover {
+	border: 1px solid $not-quite-black;
+}
+
+@media screen and (min-width: 426px) {
+	#root {
+		background-color: white;
+	}
 }
