@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import style from './Login.module.scss';
 import Header from '../components/Header';
 
-const Login = (): JSX.Element => {
+const Login = ():JSX.Element => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showError, setShowError] = useState(false);
