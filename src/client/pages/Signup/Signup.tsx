@@ -37,7 +37,7 @@ const Signup = ():JSX.Element => {
         <p>
           OR
         </p>
-        <Link to='signup' className='secondary-btn'>Login</Link>
+        <Link to='/' className='secondary-btn'>Login</Link>
       </form>
     </>
   )

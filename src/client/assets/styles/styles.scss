@@ -60,6 +60,13 @@ body{
 }
 #root {
 	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	background-color: $background-color;
+}
+main {
+	width: 100%;
+	flex: 1;
 	background-color: $background-color;
 }
 h1, h2, h3, h4, h5, h6 {

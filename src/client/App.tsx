@@ -3,11 +3,14 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Login from './pages/Login/Login';
 import Signup from './pages/Signup/Signup';
 import Home from './pages/Home/Home';
+import News from './pages/Home/News';
+import Activity from './pages/Home/Activity';
+import Profile from './pages/Home/Profile';
 
 // Router for client side rendering of separate pages
 const router = createBrowserRouter([
   { // login page
-    path: '/',
+    path: 'login',
     element: <Login />,
   },
   { // signup page
@@ -15,8 +18,22 @@ const router = createBrowserRouter([
     element: <Signup />,
   },
   { // home page
-    path: 'home',
+    path: '/',
     element: <Home />,
+    children: [
+      {
+        path: '',
+        element: <News />,
+      },
+      {
+        path: 'activity',
+        element: <Activity />,
+      },
+      {
+        path: 'profile',
+        element: <Profile />,
+      }
+    ]
   },
 ]);
 
