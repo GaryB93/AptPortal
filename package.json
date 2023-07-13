@@ -33,6 +33,7 @@
     "css-loader": "^6.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^4.10.1",
     "react-router-dom": "^6.14.1",
     "sass": "^1.63.6",
     "sass-loader": "^13.3.2",

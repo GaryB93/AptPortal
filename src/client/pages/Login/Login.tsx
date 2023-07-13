@@ -14,7 +14,7 @@ const Login = ():JSX.Element => {
 
   return (
     <>
-      <Header displayNav={false}/>
+      <Header includeNav={false}/>
       <form className={style.loginForm} onSubmit={handleSubmit}>
         <h1>Welcome</h1>
         <label htmlFor='email'>Email</label>

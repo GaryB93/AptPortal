@@ -17,7 +17,7 @@ fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed, 
 figure, figcaption, footer, hgroup, 
-menu, nav, output, ruby, section, summary,
+nav, menu, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
 	padding: 0;
@@ -28,7 +28,7 @@ time, mark, audio, video {
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
-footer, hgroup, menu, nav, section {
+footer, hgroup, menu, section {
 	display: block;
 }
 body {
@@ -60,6 +60,13 @@ body{
 }
 #root {
 	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	background-color: $background-color;
+}
+main {
+	width: 100%;
+	flex: 1;
 	background-color: $background-color;
 }
 h1, h2, h3, h4, h5, h6 {
@@ -99,7 +106,7 @@ h3 {
 	border: 1px solid $not-quite-black;
 }
 
-@media screen and (min-width: 426px) {
+@media screen and (min-width: 600px) {
 	#root {
 		background-color: white;
 	}
