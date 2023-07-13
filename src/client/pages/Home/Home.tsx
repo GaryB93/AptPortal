@@ -5,7 +5,7 @@ import { Outlet } from 'react-router-dom';
 const Home = () => {
   return (
     <>
-      <Header displayNav={true}/>
+      <Header includeNav={true}/>
       <main>
         <Outlet />
       </main>

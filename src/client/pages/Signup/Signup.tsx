@@ -17,7 +17,7 @@ const Signup = ():JSX.Element => {
 
   return (
     <>
-      <Header displayNav={false}/>
+      <Header includeNav={false}/>
       <form className={style.loginForm} onSubmit={handleSubmit}>
         <h1>Create Account</h1>
         <label htmlFor='firstname'>First Name</label>

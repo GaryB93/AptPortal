@@ -1,13 +1,85 @@
 @import '../../assets/styles/Colors.module.scss';
 
 header {
-  display: flex;
   background-color: $primary-color;
   color: $background-color;
-  padding: 1em;
-  justify-content: space-between;
+  padding: 0.5em 0;
+  vertical-align: middle;
 
-  h1 {
-    display: inline-block;
+  .logo {
+    float: left;
+    margin-left: 0.5em;
+  }
+
+  // Hamburger Icon
+  .menuIcon {
+    float: right;
+    margin-right: 0.5em;
+    position: relative;
+    top: 6px;
+    background-color: $primary-color;
+    border: none;
+    color: $background-color;
+    vertical-align: middle;
+  }
+
+  .showNav {
+    clear: both;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 64px;
+    background-color: $light-gray;
+    width: 150px;
+
+    a, button {
+      display: block;
+      text-align: right;
+      width: 100%;
+      padding: 1em;
+      background-color: $light-gray;
+      color: $not-quite-black;
+      border: none;
+      text-decoration: none;
+      font-size: 1em;
+    }
+
+    a:nth-of-type(2) {
+      border-top: 1px solid $gray;
+      border-bottom: 1px solid $gray;
+    }
+
+    a:visited {
+      color: $not-quite-black;
+    }
+  }
+
+  .hideNav {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .menuIcon {
+      display: none;
+    }
+
+    .hideNav {
+      margin-right: 1em;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 250px;
+      a {
+        text-decoration: none;
+        color: $background-color;
+      }
+    }
   }
 }
