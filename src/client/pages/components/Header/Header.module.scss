@@ -1,4 +1,4 @@
-@import '../../assets/styles/Colors.module.scss';
+@import '../../../assets/styles/Colors.module.scss';
 
 header {
   background-color: $primary-color;
@@ -28,8 +28,9 @@ header {
     display: block;
     position: absolute;
     right: 0;
-    top: 64px;
-    background-color: $light-gray;
+    top: 65px;
+    border-left: 1px solid $not-quite-black;
+    border-bottom: 1px solid $not-quite-black;
     width: 150px;
 
     a, button {
@@ -37,7 +38,7 @@ header {
       text-align: right;
       width: 100%;
       padding: 1em;
-      background-color: $light-gray;
+      background-color: $primary-highlight;
       color: $not-quite-black;
       border: none;
       text-decoration: none;

@@ -1,0 +1,37 @@
+@import '../../assets/styles/Colors.module.scss';
+
+.feed {
+  background-color: $light-gray;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.links {
+  a {
+    display: inline-block;
+    width: 50%;
+    text-align: center;
+    text-decoration: none;
+    color: $not-quite-black;
+    padding: 0.5rem 1rem;
+    background-color: $gray;
+    border: 1px solid $not-quite-black;
+    border-right: none;
+  }
+
+  .currentLink {
+    background: $light-gray;
+    border: none;
+    border-top: 1px solid $not-quite-black;
+    border-bottom: 1px dotted $not-quite-black;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .feed {
+    width: 550px;
+    margin: 0 auto;
+    border: 1px solid $gray;
+  }
+}

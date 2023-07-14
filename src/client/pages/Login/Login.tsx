@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import style from './Login.module.scss';
-import Header from '../components/Header';
+import Header from '../components/Header/Header';
 
 const Login = ():JSX.Element => {
   const [email, setEmail] = useState('');

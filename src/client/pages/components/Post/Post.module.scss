@@ -1,0 +1,29 @@
+@import '../../../assets/styles/Colors.module.scss';
+
+.post {
+  margin: 0.5rem;
+  padding: 0.5rem;
+  border: 1px solid $gray;
+  border-radius: 0.7rem;
+  background-color: $background-color;
+
+  button {
+    float: right;
+    color: white;
+    background-color: $warning-red;
+    border: 1px solid $warning-red;
+    border-radius: 0.3rem;
+    cursor: pointer;
+  }
+
+  button:hover, button:active {
+    color: $warning-red;
+    background-color: white;
+  }
+
+  p {
+    padding: 0.5rem;
+    font-size: 0.8rem;
+    clear: both;
+  }
+}
