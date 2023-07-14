@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import Header from '../components/Header';
+import Header from '../components/Header/Header';
 import style from '../Login/Login.module.scss';
 
 const Signup = ():JSX.Element => {

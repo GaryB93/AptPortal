@@ -1,0 +1,23 @@
+@import '../../../assets/styles/Colors.module.scss';
+
+.newPost {
+  margin: 0.5rem;
+  padding: 0.5rem;
+  border: 1px solid $gray;
+  border-radius: 0.7rem;
+  background-color: $background-color;
+
+  textarea {
+    display: block;
+    width: 100%;
+    border-color: $gray;
+    padding: 0.3rem;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 0.7em;
+  }
+
+  button {
+    float: right;
+    margin-top: 0.5rem;
+  }
+}
