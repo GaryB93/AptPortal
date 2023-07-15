@@ -27,7 +27,8 @@ const Header = ({ includeNav }: {includeNav: boolean}): JSX.Element => {
           </button>
         </IconContext.Provider>
         <nav className={showNav ? style.showNav : style.hideNav}>
-          <NavLink to=''>Home</NavLink>
+          <NavLink to=''>News</NavLink>
+          <NavLink to='activity'>Community</NavLink>
           <NavLink to='profile'>Profile</NavLink>
           <button>Logout</button>
         </nav>
