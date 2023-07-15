@@ -1,11 +1,8 @@
 @import '../../../assets/styles/Colors.module.scss';
 
-.post {
+.comment {
   margin: 0.5rem;
   padding: 0.5rem;
-  border: 1px solid $gray;
-  border-radius: 0.7rem;
-  background-color: $background-color;
 
   button {
     float: right;

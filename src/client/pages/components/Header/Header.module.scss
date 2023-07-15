@@ -39,19 +39,15 @@ header {
       width: 100%;
       padding: 1em;
       background-color: $primary-highlight;
-      color: $not-quite-black;
+      color: white;
       border: none;
+      border-bottom: 1px solid white;
       text-decoration: none;
       font-size: 1em;
     }
 
-    a:nth-of-type(2) {
-      border-top: 1px solid $gray;
-      border-bottom: 1px solid $gray;
-    }
-
     a:visited {
-      color: $not-quite-black;
+      color: white;
     }
   }
 
@@ -76,10 +72,18 @@ header {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      width: 250px;
+      width: 300px;
       a {
         text-decoration: none;
         color: $background-color;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      button {
+        cursor: pointer;
       }
     }
   }

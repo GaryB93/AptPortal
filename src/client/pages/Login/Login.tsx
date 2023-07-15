@@ -9,7 +9,9 @@ const Login = ():JSX.Element => {
   const [showError, setShowError] = useState(false);
 
   const handleSubmit = ():void => {
-
+    // should update user context here with user information if valid
+    // then navigate to home page to view news
+    // if invalid credentials set showError to true to display error message
   };
 
   return (
