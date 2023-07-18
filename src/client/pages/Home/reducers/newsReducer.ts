@@ -14,20 +14,20 @@ const initialNews = [
 
 ];
 
-const newsReducer = (news ,action: Action) => {
-  switch (action.type) {
-    case 'newsRetrieved': {
+// const newsReducer = (news ,action: Action) => {
+//   switch (action.type) {
+//     case 'newsRetrieved': {
 
-    }
+//     }
 
-    case 'newsAdded': {
+//     case 'newsAdded': {
 
-    }
+//     }
 
-    case 'newsDeleted': {
+//     case 'newsDeleted': {
 
-    }
-  }
-};
+//     }
+//   }
+// };
 
-export default newsReducer;
+// export default newsReducer;

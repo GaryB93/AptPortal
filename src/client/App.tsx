@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useReducer } from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Login from './pages/Login/Login';
 import Signup from './pages/Signup/Signup';
@@ -6,6 +6,7 @@ import Home from './pages/Home/Home';
 import News from './pages/Home/News';
 import Activity from './pages/Home/Activity';
 import Profile from './pages/Home/Profile';
+import GlobalContext, { globalReducer, globalState } from './context/userContext';
 
 // Router for client side rendering of separate pages
 const router = createBrowserRouter([
@@ -38,9 +39,13 @@ const router = createBrowserRouter([
 ]);
 
 const App = ():JSX.Element => {
+  const [state, dispatch] = useReducer(globalReducer, globalState);
+
   return (
     <React.StrictMode>
-      <RouterProvider router={router}/>
+      <GlobalContext.Provider value={[state, dispatch]}>
+        <RouterProvider router={router}/>
+      </GlobalContext.Provider>
     </React.StrictMode>
   )
 }

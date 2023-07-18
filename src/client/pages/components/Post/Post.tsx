@@ -1,23 +1,18 @@
-import React from 'react';
+import React, { useContext} from 'react';
 import Author from '../Author/Author';
-import Comment from '../Comment/Comment';
+import CommentPost from '../Comment/Comment';
+import GlobalContext from '../../../context/userContext';
+import { Comment } from '../../../context/globalTypes';
 import style from './Post.module.scss';
-
-// comment structure
-interface Comment {
-  author: string;
-  date: string;
-  comment: string;
-}
 
 const Post = ({ author, date, post, comments }: 
   { author: string, date: string, post: string, comments: Comment[]}) => {
-  
+    const [state, dispatch] = useContext(GlobalContext);
     const commentArr:JSX.Element[] = [];
 
     for (const curr of comments) {
       commentArr.push(
-        <Comment
+        <CommentPost
           author={curr.author}
           date={curr.date}
           comment={curr.comment}
@@ -28,7 +23,7 @@ const Post = ({ author, date, post, comments }:
     return (
     <div className={style.post}>
       <Author author={author} date={date}/>
-      <button>Delete</button>
+      {(state.user.isAdmin || state.user.name === author) ? <button>Delete</button> : null}
       <p>
         {post}
       </p>

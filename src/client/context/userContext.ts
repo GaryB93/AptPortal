@@ -1,34 +1,52 @@
 import { createContext } from 'react';
+import { User, Post, Comment } from './globalTypes';
 
 interface Action {
   type: string;
   payload: User
 }
 
-interface User {
-  name: string;
-  isAdmin: boolean;
-  email: string;
-  community: string;
+interface GlobalState {
+  user: User;
+  news: Post[];
+  posts: Post[];
 }
 
 // initial state shows user is not logged in
-const user = {
-  name: '',
-  isAdmin: false,
-  email: '',
-  community: ''
+export const globalState: GlobalState = {
+  user: {
+    name: '',
+    isAdmin: false,
+    email: '',
+    community: '',
+  },
+  news: [],
+  posts: [],
 }
 
-const userReducer = (user: User, action: Action) => {
+export const globalReducer = (state: GlobalState, action: Action) => {
   switch (action.type) {
     case 'loggedIn': {
       const user = action.payload;
       return {
-        name: user.name,
-        isAdmin: user.isAdmin,
-        email: user.email,
-        community: user.community
+        ...state,
+        user: {name: user.name,
+          isAdmin: user.isAdmin,
+          email: user.email,
+          community: user.community
+        }
+      }
+    }
+    case 'loggedOut': {
+      return {
+        user: {
+          name: '',
+          isAdmin: false,
+          email: '',
+          community: '',
+        },
+        news: [],
+        posts: [],
       }
     }
     default: {
@@ -37,4 +55,7 @@ const userReducer = (user: User, action: Action) => {
   }
 };
 
-export default userReducer;
+// create context to be able to pass down reducer and state
+const GlobalContext = createContext(null);
+
+export default GlobalContext;

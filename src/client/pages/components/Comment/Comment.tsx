@@ -1,17 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import style from './Comment.module.scss';
 import Author from '../Author/Author';
+import GlobalContext from '../../../context/userContext';
+import { Comment } from '../../../context/globalTypes';
 
-const Comment = ({ author, date, comment }:
-  {
-    author: string,
-    date: string,
-    comment: string
-  }): JSX.Element => {
+const CommentPost = ({ author, date, comment }: Comment): JSX.Element => {
+    const [state, dispatch] = useContext(GlobalContext);
   return (
     <div className={style.comment}>
       <Author author={author} date={date} />
-      <button>Delete</button>
+      {state.user.name === author ? <button>Delete</button> : null}
       <p>
         {comment}
       </p>
@@ -19,4 +17,4 @@ const Comment = ({ author, date, comment }:
   )
 };
 
-export default Comment;
+export default CommentPost;
