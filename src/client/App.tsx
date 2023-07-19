@@ -6,7 +6,7 @@ import Home from './pages/Home/Home';
 import News from './pages/Home/News';
 import Activity from './pages/Home/Activity';
 import Profile from './pages/Home/Profile';
-import GlobalContext, { globalReducer, globalState } from './context/userContext';
+import GlobalContext, { globalReducer, globalState } from './context/globalContext';
 
 // Router for client side rendering of separate pages
 const router = createBrowserRouter([

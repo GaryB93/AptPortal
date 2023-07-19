@@ -1,3 +1,14 @@
+export interface Action {
+  type: string;
+  user?: User
+}
+
+export interface GlobalState {
+  user: User;
+  news: Post[];
+  posts: Post[];
+}
+
 export interface User {
   name: string;
   isAdmin: boolean;

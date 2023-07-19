@@ -1,16 +1,5 @@
 import { createContext } from 'react';
-import { User, Post, Comment } from './globalTypes';
-
-interface Action {
-  type: string;
-  payload: User
-}
-
-interface GlobalState {
-  user: User;
-  news: Post[];
-  posts: Post[];
-}
+import { Action, GlobalState } from './globalTypes';
 
 // initial state shows user is not logged in
 export const globalState: GlobalState = {
@@ -20,14 +9,50 @@ export const globalState: GlobalState = {
     email: '',
     community: '',
   },
-  news: [],
-  posts: [],
+  news: [
+    {
+      author: 'Gary Balogh',
+      date: '07/17/23',
+      post: 'This is news',
+      comments: [],
+    },
+    {
+      author: 'Gary Balogh',
+      date: '07/18/23',
+      post: 'This is news',
+      comments: [],
+    }
+  ],
+  posts: [
+    {
+      author: 'John Smith',
+      date: '07/18/23',
+      post: 'This is a community post',
+      comments: [
+        {
+          author: 'Jane Doe',
+          date: '07/18/23',
+          comment: 'Oh here we go...'
+        },
+        {
+          author: 'Jane Doe',
+          date: '07/18/23',
+          comment: 'Oh here we go...'
+        },
+        {
+          author: 'Jane Doe',
+          date: '07/18/23',
+          comment: 'Oh here we go...'
+        }
+      ]
+    }
+  ],
 }
 
 export const globalReducer = (state: GlobalState, action: Action) => {
   switch (action.type) {
     case 'loggedIn': {
-      const user = action.payload;
+      const user = action.user;
       return {
         ...state,
         user: {name: user.name,
