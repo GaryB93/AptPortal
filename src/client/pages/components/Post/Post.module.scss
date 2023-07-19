@@ -7,7 +7,7 @@
   border-radius: 0.7rem;
   background-color: $background-color;
 
-  button {
+  .delete {
     float: right;
     color: $warning-red;
     background-color: none;
@@ -15,13 +15,38 @@
     cursor: pointer;
   }
 
-  button:hover, button:active {
+  .delete:hover, .delete:active {
     text-decoration: underline;
   }
 
-  p {
+  .postText {
     padding: 0.5rem;
     font-size: 0.8rem;
     clear: both;
+    border-bottom: 1px solid $gray;
+  }
+    
+  .showCommentsBtn {
+    display: block;
+    border: none;
+    text-decoration: underline;
+    cursor: pointer;
+    margin: 1.5rem auto;
+  }
+
+  .newComment {
+    textarea {
+      display: block;
+      width: 100%;
+      border-color: $gray;
+      border-radius: 0.7rem;
+      padding: 0.3rem;
+      font-family:Verdana, Geneva, Tahoma, sans-serif;
+      font-size: 0.8em;
+      margin-bottom: 0.5rem;
+    }
+    button {
+      float: right;
+    }
   }
 }

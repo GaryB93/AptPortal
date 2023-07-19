@@ -1,29 +1,22 @@
-import React, { useState } from 'react';
+import React, { FormEventHandler, useState } from 'react';
 import style from './NewPost.module.scss';
 
-const NewPost = ({ page }:
-  { page: 'news' | 'community' }) => {
+const NewPost = ({ handleSubmit }:
+  { handleSubmit: Function }) => {
     const [newPost, setNewPost] = useState('');
 
-    const handleSubmit = (e: React.FormEvent) => {
-      e.preventDefault();
-      // if on 'news' page add to news
-      // if on 'community' page add community post
-    }
-
     return (
-      <form className={style.newPost} onSubmit={handleSubmit}>
-        <label htmlFor='post'>New Post</label>
+      <form className={style.newPost} onSubmit={(e) => handleSubmit(newPost)}>
         <textarea
           id='post'
           name='post'
+          aria-label='New post'
           rows={3}
           required
           placeholder='Create new post...'
           value={newPost}
-          onChange={(e) => {setNewPost(e.target.value)}}>
-        </textarea>
-        <button type='submit'>POST</button>
+          onChange={(e) => {setNewPost(e.target.value)}}/>
+        <button className='primary-btn' type='submit'>POST</button>
       </form>
     )
 };

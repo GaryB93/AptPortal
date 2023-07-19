@@ -1,38 +1,67 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import Author from '../Author/Author';
-import Comment from '../Comment/Comment';
+import CommentPost from '../Comment/CommentPost';
+import GlobalContext from '../../../context/globalContext';
+import { Comment } from '../../../context/globalTypes';
+import { Post } from '../../../context/globalTypes';
 import style from './Post.module.scss';
 
-// comment structure
-interface Comment {
-  author: string;
-  date: string;
-  comment: string;
-}
+const Post = ({ post, commentsEnabled }: 
+  { post: Post, commentsEnabled: boolean } ) => {
+    const [showComments, setShowComments] = useState(false);
+    const [commentInput, setCommentInput] = useState('');
+    const [state, dispatch] = useContext(GlobalContext);
 
-const Post = ({ author, date, post, comments }: 
-  { author: string, date: string, post: string, comments: Comment[]}) => {
-  
-    const commentArr:JSX.Element[] = [];
+    // handle comment add
+    const handleAddComment = (e: React.FormEvent) => {
+      e.preventDefault();
+      // add comment to appropriate post
+    };
 
-    for (const curr of comments) {
+    // populate array of Comment elements
+    const commentArr: JSX.Element[] = [];
+    for (const curr of post.comments) {
       commentArr.push(
-        <Comment
-          author={curr.author}
-          date={curr.date}
-          comment={curr.comment}
-        />
+        <CommentPost comment={curr}/>
       );
     }
-  
+
     return (
     <div className={style.post}>
-      <Author author={author} date={date}/>
-      <button>Delete</button>
-      <p>
-        {post}
+      <Author author={post.author} date={post.date}/>
+      {
+        (state.user.isAdmin || state.user.name === post.author) ?
+        <button className={style.delete}>DELETE</button> :
+        null
+      }
+      <p className={style.postText}>
+        {post.post}
       </p>
-      {commentArr}
+      {/* only show comment section when enabled */}
+      {commentsEnabled && 
+        <div>
+          {showComments ? commentArr : null}
+          {commentArr.length > 0 &&
+            <button
+              className={style.showCommentsBtn}
+              onClick={() => {setShowComments(showComments ? false : true)}}>
+                {showComments ? 'hide comments...' : 'show comments...'}
+            </button>
+          }
+          <form className={style.newComment} onSubmit={handleAddComment}>
+            <textarea
+              id='comment'
+              name='comment'
+              aria-label='New comment'
+              rows={3}
+              required
+              placeholder='New comment...'
+              value={commentInput}
+              onChange={(e) => {setCommentInput(e.target.value)}}/>
+            <button className='primary-btn' type='submit'>COMMENT</button>
+          </form>
+        </div>
+      }
     </div>
   )
 };
