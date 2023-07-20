@@ -2,6 +2,8 @@ import React, { useEffect, useContext } from 'react';
 import NewPost from '../components/NewPost/NewPost';
 import Post from '../components/Post/Post';
 import GlobalContext from '../../context/globalContext';
+import { PostObj } from '../../context/globalTypes';
+import dateString from '../../utils/dateString';
 import style from './Home.module.scss';
 
 const News = () => {
@@ -20,9 +22,25 @@ const News = () => {
     });
   }, []);
 
-  const handleSubmit = (e: React.FormEvent, post: string) => {
+  const handleSubmit = (e: React.FormEvent, post: string, setInput: Function) => {
     e.preventDefault();
+    
+    // new post object
+    const newPost: PostObj = {
+      author: state.user.name,
+      date: dateString(),
+      post: post,
+      comments: [],
+    }
+
     // send news post to server with current user name and date
+    dispatch({
+      type: 'newsPosted',
+      news: newPost,
+    });
+
+    // reset new post input
+    setInput('');
   };
 
   const newsArr = [];

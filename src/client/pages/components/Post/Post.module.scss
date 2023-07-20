@@ -26,12 +26,16 @@
     border-bottom: 1px solid $gray;
   }
     
-  .showCommentsBtn {
+  .showCommentsBtn, .disabledComments {
     display: block;
     border: none;
     text-decoration: underline;
     cursor: pointer;
     margin: 1.5rem auto;
+  }
+
+  .disabledComments {
+    cursor: auto;
   }
 
   .newComment {

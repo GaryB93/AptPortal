@@ -1,0 +1,40 @@
+@import '../../../assets/styles/Colors.module.scss';
+
+.profileCard {
+  flex: 1;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  border: 1px solid $gray;
+  border-radius: 0.7rem;
+  background-color: $background-color;
+
+  .pic {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    div {
+      width: 100px;
+      height: 100px;
+      background-color: black;
+      border-radius: 50%;
+    }
+  }
+  
+  label {
+    display: block;
+  }
+
+  input {
+    border: 1px solid $gray;
+    border-radius: 0.5rem;
+    padding: 0.3rem;
+    font-size: 0.8em;
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  button {
+    width: 100%;
+  }
+}
