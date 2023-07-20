@@ -1,12 +1,15 @@
 export interface Action {
   type: string;
-  user?: User
+  user?: User;
+  news?: PostObj;
+  post?: string;
+  comment?: string;
 }
 
 export interface GlobalState {
   user: User;
-  news: Post[];
-  posts: Post[];
+  news: PostObj[];
+  posts: PostObj[];
 }
 
 export interface User {
@@ -16,7 +19,7 @@ export interface User {
   community: string;
 }
 
-export interface Post {
+export interface PostObj {
   author: string;
   date: string;
   post: string;

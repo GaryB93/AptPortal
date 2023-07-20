@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import GlobalContext from '../../context/globalContext';
+import ProfileCard from '../components/ProfileCard/ProfileCard';
+import style from './Home.module.scss';
 
 const Profile = () => {
+  const [state, dispatch] = useContext(GlobalContext);
+
   return (
-    <h1>Profile</h1>
+    <div className={style.feed}>
+      <ProfileCard/>
+    </div>
   )
 };
 

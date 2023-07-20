@@ -3,11 +3,12 @@ import Author from '../Author/Author';
 import CommentPost from '../Comment/CommentPost';
 import GlobalContext from '../../../context/globalContext';
 import { Comment } from '../../../context/globalTypes';
-import { Post } from '../../../context/globalTypes';
+import { PostObj } from '../../../context/globalTypes';
+import dateString from '../../../utils/dateString';
 import style from './Post.module.scss';
 
 const Post = ({ post, commentsEnabled }: 
-  { post: Post, commentsEnabled: boolean } ) => {
+  { post: PostObj, commentsEnabled: boolean } ) => {
     const [showComments, setShowComments] = useState(false);
     const [commentInput, setCommentInput] = useState('');
     const [state, dispatch] = useContext(GlobalContext);
@@ -16,6 +17,11 @@ const Post = ({ post, commentsEnabled }:
     const handleAddComment = (e: React.FormEvent) => {
       e.preventDefault();
       // add comment to appropriate post
+      dispatch({
+        type: 'commentAdded',
+        post: post.post,
+        comment: commentInput,
+      });
     };
 
     // populate array of Comment elements
@@ -41,7 +47,14 @@ const Post = ({ post, commentsEnabled }:
       {commentsEnabled && 
         <div>
           {showComments ? commentArr : null}
-          {commentArr.length > 0 &&
+          {commentArr.length === 0 && 
+            <button
+              className={style.disabledComments}
+              disabled={true}>
+                no comments
+            </button>
+          }
+          {commentArr.length > 0 && 
             <button
               className={style.showCommentsBtn}
               onClick={() => {setShowComments(showComments ? false : true)}}>

@@ -6,7 +6,8 @@ const NewPost = ({ handleSubmit }:
     const [newPost, setNewPost] = useState('');
 
     return (
-      <form className={style.newPost} onSubmit={(e) => handleSubmit(newPost)}>
+      <form className={style.newPost}
+      onSubmit={(e) => handleSubmit(e, newPost, setNewPost)}>
         <textarea
           id='post'
           name='post'

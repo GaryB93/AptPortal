@@ -1,5 +1,6 @@
 import { createContext } from 'react';
-import { Action, GlobalState } from './globalTypes';
+import { Action, GlobalState, PostObj } from './globalTypes';
+import dateString from '../utils/dateString';
 
 // initial state shows user is not logged in
 export const globalState: GlobalState = {
@@ -72,6 +73,39 @@ export const globalReducer = (state: GlobalState, action: Action) => {
         },
         news: [],
         posts: [],
+      }
+    }
+    case 'newsPosted': {
+      const copy = JSON.parse(JSON.stringify(state));
+      const news = copy.news;
+      news.push(action.news);
+      return {
+        ...copy,
+      }
+    }
+    case 'postAdded': {
+      const copy = JSON.parse(JSON.stringify(state));
+      const posts = copy.posts;
+      posts.push(action.post);
+      return {
+        ...copy,
+      }
+    }
+    case 'commentAdded': {
+      const copy = JSON.parse(JSON.stringify(state));
+      const posts = copy.posts;
+      posts.forEach((post: PostObj): void => {
+        if (post.post === action.post) {
+          const newComment = {
+            author: copy.user.name,
+            date: dateString(),
+            comment: action.comment,
+          }
+          post.comments.push(newComment);
+        }
+      });
+      return {
+        ...copy,
       }
     }
     default: {
