@@ -16,9 +16,9 @@ const Login = ():JSX.Element => {
 
   return (
     <>
-      <Header includeNav={false}/>
       <form className={style.loginForm} onSubmit={handleSubmit}>
-        <h1>Welcome</h1>
+        <div className={style.logo}>Vista Pointe</div>
+        <h1>Welcome back!</h1>
         <label htmlFor='email'>Email</label>
         <input type='email' id='email' name='email' value={email} required onChange={(e) => setEmail(e.target.value)}/>
         <label htmlFor='password'>Password</label>

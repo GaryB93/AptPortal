@@ -11,7 +11,7 @@ import GlobalContext, { globalReducer, globalState } from './context/globalConte
 // Router for client side rendering of separate pages
 const router = createBrowserRouter([
   { // login page
-    path: 'login',
+    path: '/',
     element: <Login />,
   },
   { // signup page
@@ -19,7 +19,7 @@ const router = createBrowserRouter([
     element: <Signup />,
   },
   { // home page
-    path: '/',
+    path: 'home',
     element: <Home />,
     children: [
       {

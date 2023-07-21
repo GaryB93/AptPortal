@@ -3,26 +3,27 @@
 .loginForm {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
-  align-content: center;
-  padding: 1em;
+  // align-content: center;
   background-color: $background-color;
-  
+  height: 100%;
 
-  h1 {
+  .logo {
     text-align: center;
+    margin-bottom: 4rem;
+    background-color: $primary-color;
+    padding: 1rem;
   }
 
   label {
-    margin-top: 1em;
+    margin: 1rem 2rem 0 2rem;
   }
 
   input {
-    height: 1.5em;
+    height: 1.5rem;
     padding: 15px;
     text-align: center;
-    min-width: 240px;
     border: 1px solid $light-gray;
+    margin: 0 2rem;
   }
 
   p:nth-of-type(1) {
@@ -30,19 +31,20 @@
   }
 
   p {
-    margin: 1em 0;
+    margin: 1rem 0;
     text-align: center;
   }
 
   button {
-    height: 2em;
+    // height: 2rem;
+    margin: 0 2rem;
   }
 
   a {
     text-align: center;
     text-decoration: none;
     height: 2em;
-    margin-bottom: 1em;
+    margin: 0 2rem 1em 2rem;
   }
 }
 
@@ -51,6 +53,6 @@
     border: 1px solid $light-gray;
     box-shadow: 0 0 5px 1px rgb(146, 146, 146);
     width: 400px;
-    margin: 3em auto 0 auto;
+    margin: 0 auto 0 auto;
   }
 }

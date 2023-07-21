@@ -22,6 +22,7 @@ const News = () => {
     });
   }, []);
 
+  // handle adding new news post
   const handleSubmit = (e: React.FormEvent, post: string, setInput: Function) => {
     e.preventDefault();
     

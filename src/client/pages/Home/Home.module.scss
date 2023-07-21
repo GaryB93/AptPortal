@@ -1,7 +1,6 @@
 @import '../../assets/styles/Colors.module.scss';
 
 .feed {
-  background-color: $light-gray;
   display: flex;
   flex-direction: column;
   min-height: 100%;
@@ -11,6 +10,5 @@
   .feed {
     width: 550px;
     margin: 0 auto;
-    border: 1px solid $gray;
   }
 }

@@ -1,22 +1,26 @@
 @import '../../../assets/styles/Colors.module.scss';
 
 .post {
-  margin: 0.5rem;
+  margin: 0.25rem 0.5rem;
   padding: 0.5rem;
   border: 1px solid $gray;
   border-radius: 0.7rem;
   background-color: $background-color;
 
   .delete {
+    background-color: $warning-red;
+    color: white;
+    width: 24px;
+    height: 24px;
+    border: 1px solid $warning-red;
+    border-radius: 50%;
+    font-size: 0.9rem;
     float: right;
-    color: $warning-red;
-    background-color: none;
-    border: none;
     cursor: pointer;
   }
 
   .delete:hover, .delete:active {
-    text-decoration: underline;
+    opacity: 0.6;
   }
 
   .postText {

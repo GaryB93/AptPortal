@@ -13,8 +13,10 @@ const ProfileCard = () => {
         </div>
         <span>{state.user.name}</span>
       </div>
-      <label htmlFor='email'>Email</label>
-      <input id='email' name='email' type='email' value={state.user.email} readOnly={true}/>
+      <label>
+        Email
+        <input id='email' name='email' type='email' value={state.user.email} readOnly={true}/>
+      </label>
       <button className='warning-btn'>Delete Account</button>
     </div>
   )

@@ -17,8 +17,8 @@ const Signup = ():JSX.Element => {
 
   return (
     <>
-      <Header includeNav={false}/>
       <form className={style.loginForm} onSubmit={handleSubmit}>
+        <div className={style.logo}>Vista Pointe</div>
         <h1>Create Account</h1>
         <label htmlFor='firstname'>First Name</label>
         <input type='text' id='firstname' name='firstname' value={firstName} required onChange={(e) => setFirstName(e.target.value)}></input>

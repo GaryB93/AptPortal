@@ -2,9 +2,7 @@ import React, { useContext, useState } from 'react';
 import Author from '../Author/Author';
 import CommentPost from '../Comment/CommentPost';
 import GlobalContext from '../../../context/globalContext';
-import { Comment } from '../../../context/globalTypes';
 import { PostObj } from '../../../context/globalTypes';
-import dateString from '../../../utils/dateString';
 import style from './Post.module.scss';
 
 const Post = ({ post, commentsEnabled }: 
@@ -37,8 +35,7 @@ const Post = ({ post, commentsEnabled }:
       <Author author={post.author} date={post.date}/>
       {
         (state.user.isAdmin || state.user.name === post.author) ?
-        <button className={style.delete}>DELETE</button> :
-        null
+        <button className={style.delete} aria-label='Delete'>X</button> : null
       }
       <p className={style.postText}>
         {post.post}

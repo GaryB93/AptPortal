@@ -1,25 +1,29 @@
 @import '../../../assets/styles/Colors.module.scss';
 
 header {
+  width: 100%;
   background-color: $primary-color;
-  color: $background-color;
-  padding: 0.5em 0;
+  color: white;
+  padding: 0.5rem 0;
   vertical-align: middle;
+  border-bottom: 1px solid $gray;
+  position: fixed;
 
   .logo {
     float: left;
-    margin-left: 0.5em;
+    margin-left: 1rem;
+    color: $tertiary-color;
   }
 
   // Hamburger Icon
   .menuIcon {
     float: right;
-    margin-right: 0.5em;
+    margin-right: 1rem;
     position: relative;
     top: 6px;
     background-color: $primary-color;
     border: none;
-    color: $background-color;
+    color: white;
     vertical-align: middle;
   }
 
@@ -29,8 +33,6 @@ header {
     position: absolute;
     right: 0;
     top: 65px;
-    border-left: 1px solid $not-quite-black;
-    border-bottom: 1px solid $not-quite-black;
     width: 150px;
 
     a, button {
@@ -38,10 +40,10 @@ header {
       text-align: right;
       width: 100%;
       padding: 1em;
-      background-color: $primary-highlight;
+      background-color: $primary-color;
       color: white;
       border: none;
-      border-bottom: 1px solid white;
+      border-bottom: 1px solid $gray;
       text-decoration: none;
       font-size: 1em;
     }
@@ -75,11 +77,11 @@ header {
       width: 300px;
       a {
         text-decoration: none;
-        color: $background-color;
+        color: white;
       }
 
       a:hover {
-        text-decoration: underline;
+        color: $tertiary-color;
       }
 
       button {
